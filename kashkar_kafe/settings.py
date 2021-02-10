@@ -82,15 +82,21 @@ WSGI_APPLICATION = 'kashkar_kafe.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kashkar_kafe_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Artel2019',
-        'HOST': 'localhost',
-        'PORT': 5432
-    }
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL"), conn_max_age=600
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'kashkar_kafe_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Artel2019',
+#         'HOST': 'localhost',
+#         'PORT': 5432
+#     }
+# }
 
 
 # Password validation
