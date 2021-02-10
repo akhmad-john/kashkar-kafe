@@ -17,9 +17,9 @@ class MealOrder(models.Model):
 
 
 class OrderUnit(models.Model):
-    meal = models.ForeignKey(Meal, on_delete=models.SET_NULL, related_name='units')
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE, related_name='units')
     quantity = models.IntegerField()
-    order = models.ForeignKey(MealOrder, on_delete=models.SET_NULL, related_name='order_units')
+    order = models.ForeignKey(MealOrder, on_delete=models.CASCADE, related_name='order_units')
 
     def __str__(self):
         return self.meal+str(self.quantity)

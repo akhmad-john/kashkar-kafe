@@ -1,0 +1,5 @@
+# created by virtualenv automatically
+
+production/nginx/nginx.conf
+production/.env.prod
+production/.env.prod.db
