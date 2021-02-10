@@ -9,7 +9,7 @@ services:
     volumes:
       - static_volume:/home/app/web/static
     expose:
-      - 80:80
+      - 8000
     env_file:
       - ./.env.prod
     depends_on:
@@ -21,7 +21,14 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
-
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/static
+    ports:
+      - 80:80
+    depends_on:
+      - web
 volumes:
   postgres_data:
   static_volume:
