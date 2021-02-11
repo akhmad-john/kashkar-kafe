@@ -1,9 +1,3 @@
-ADD entrypoint.prod.sh /
-ENTRYPOINT ["/entrypoint.prod.sh"]
-CMD [""]
-
-RUN chmod +x entrypoint.prod.sh
-
 FROM python:3.8-slim-buster as builder
 
 WORKDIR ./
