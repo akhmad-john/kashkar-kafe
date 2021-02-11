@@ -39,7 +39,7 @@ COPY ./production/entrypoint.prod.sh $APP_HOME
 
 COPY . $APP_HOME
 
-RUN chown +x app $APP_HOME
+RUN chown -R app $APP_HOME
 
 USER app
 
