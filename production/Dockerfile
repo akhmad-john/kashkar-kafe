@@ -40,7 +40,7 @@ COPY ./production/entrypoint.prod.sh $APP_HOME
 COPY . $APP_HOME
 
 RUN chown -R app $APP_HOME
-RUN chmod 755 /home/app/web/production/entrypoint.prod.sh
+
 
 USER app
 
