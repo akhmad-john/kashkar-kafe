@@ -42,6 +42,11 @@ COPY . $APP_HOME
 RUN chown -R app $APP_HOME
 
 USER app
-RUN chmod 400 entrypoint.prod.sh
+
+ADD entrypoint.prod.sh /
+
 
 ENTRYPOINT ["/home/app/web/production/entrypoint.prod.sh"]
+CMD [""]
+
+RUN chmod +x entrypoint.prod.sh
