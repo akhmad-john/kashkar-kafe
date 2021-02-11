@@ -44,4 +44,4 @@ RUN chown -R app $APP_HOME
 USER app
 
 ENTRYPOINT ["/home/app/web/production/entrypoint.prod.sh"]
-RUN chmod +x entrypoint.prod.sh
+RUN chmod 400 entrypoint.prod.sh
